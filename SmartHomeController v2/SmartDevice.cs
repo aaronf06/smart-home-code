@@ -41,6 +41,16 @@ namespace SmartHomeController
 
         }
 
-       
+        public void TurnOn()
+        {
+            this.Status = true;
+        }
+
+        public void TurnOff()
+        {
+            this.Status = false;
+        }
+
+
     }
 }
