@@ -26,13 +26,19 @@ namespace SmartHomeController
             set { targetTemperature = value; }
         }
 
-        public SmartThermostat(double thermostatCurrentTemperature, double thermostatTargetTemperature) 
+        public SmartThermostat(double thermostatCurrentTemperature, double thermostatTargetTemperature, int deviceID, string deviceName) : base(deviceID, deviceName)
         {
             this.CurrentTemperature = thermostatCurrentTemperature;
             this.TargetTemperature = thermostatTargetTemperature;
 
         }
 
+        public override void GetStatus()
+        {
+            base.GetStatus();
+            Console.WriteLine("This is a smart thermostat");
+            Console.WriteLine($"Current tempature: {CurrentTemperature}, target temperature: {TargetTemperature}");
+        }
 
 
     }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SmartHomeController
+﻿namespace SmartHomeController
 {
     public class SmartLight : SmartDevice
     {
@@ -44,6 +38,12 @@ namespace SmartHomeController
             Console.WriteLine($"Colour now set to {Colour}");
         }
 
+        public override void GetStatus()
+        {
+            base.GetStatus();
+            Console.WriteLine("This is a smart light.");
+            Console.WriteLine($"Brightness: {Brightness} % Color: {Colour}");
+        }
 
     }
 }
